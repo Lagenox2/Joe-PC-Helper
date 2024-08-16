@@ -18,6 +18,7 @@ from threading import Thread
 from pyqadmin import admin
 from random  import randint
 import codecs
+from filesys.system.system import *
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
@@ -80,18 +81,13 @@ class Action:
             time.sleep(0.05)
         print()
 
-'''engine.say(f'By the way, will you give me administrator? We are best friends, arent we?')
-        engine.runAndWait()
-        admin()
-        engine.say(f'Ok, i understand.')
-        engine.runAndWait()'''
-
 def browsing():
     os.system('start http://')
 
 def os_start():
     engine.say('Welcome. To your Operating System. I made it especially for you!')
     engine.runAndWait()
+    boot()
 
 def oper_sys():
     root1 = tk.Tk()
