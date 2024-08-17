@@ -8,8 +8,21 @@ import keyboard
 from threading import Thread
 
 
+
+def cmd_listen():
+    return input()
+
+def cmd_answer(comd):
+    file = open('commands.conf', 'r')
+    ALL_COMMANDS = file.readlines()
+    ALL_COMMANDS[0] = ALL_COMMANDS[0][3:-3]
+    if comd in ALL_COMMANDS:
+        if comd == 'shutdown':
+            os.system('exit')
+    else:
+        print(f'Bad name of command {comd}.')
+
 def command():
-    command_win = Tk()
-    command_win.title('2024 Operating System. All right reserved. Command Prompt')
-    command_win.geometry('950x514')
-    command_win.mainloop()
+    os.system('cd')
+    while True:
+        cmd_answer(cmd_listen())

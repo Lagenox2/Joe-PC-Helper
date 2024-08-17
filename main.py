@@ -23,6 +23,8 @@ from filesys.system.system import *
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
 
+os.system('cd filesys/system')
+
 global mng
 
 
@@ -48,11 +50,6 @@ def clnd_int(win: Tk, lbl: Label):
     engine.say('I will keep your plan in mind.')
     engine.runAndWait()
     menu(lbl, win)
-
-@admin
-def admin():
-    print('Successfully given administrator')
-    start2()
 
 class Action:
     def __init__(self):
@@ -161,7 +158,6 @@ def menu(text, win):
                'If you want me to interact with calendar and write there some data, type clnd_int')
     choice = input()
     if choice == 'manage':
-        admin()
         engine.say('Ok, proceed.')
         engine.runAndWait()
         manage()
