@@ -2,6 +2,7 @@ import subprocess
 import time
 import tkinter as tk
 import os
+import sys
 from tkinter import messagebox as mb
 
 from PIL import Image
@@ -22,8 +23,6 @@ from filesys.system.system import *
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
-
-os.system('cd filesys/system')
 
 global mng
 
@@ -101,7 +100,6 @@ def oper_sys():
     canvas1 = tk.Canvas(frame1, width=root1.winfo_width(), height=root1.winfo_height(), background='black')
     canvas1.pack()
 
-    root1.protocol("WM_DELETE_WINDOW", stay)
     process2 = Thread(target=os_start)
     process2.start()
 
@@ -193,7 +191,11 @@ def start2():
 def stay():
     pass
 
-
+def checkstate():
+    file = open('system.state', 'r')
+    while file.read() != 'shutdowned':
+        pass
+    sys.exit()
 
 actions = Action()
 root = tk.Tk()
@@ -218,9 +220,9 @@ image2 = canvas.create_image(0, 0, anchor='nw', image=img2)
 canvas.coords(image2, 100, 100)'''
 canvas.pack()
 
-root.protocol("WM_DELETE_WINDOW", stay)
-
 process1 = Thread(target=start)
 process1.start()
+check = Thread(target=checkstate)
+check.start()
 
 root.mainloop()
