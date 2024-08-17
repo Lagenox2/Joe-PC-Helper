@@ -9,10 +9,7 @@ from threading import Thread
 
 
 def command():
-    os.system('start cmd.exe')
-    keyboard.write('@echo off')
-    keyboard.send('enter')
-    keyboard.write('cls')
-    keyboard.send('enter')
-    keyboard.write('echo on')
-    keyboard.send('enter')
+    command_win = Tk()
+    command_win.title('2024 Operating System. All right reserved.')
+    command_win.geometry('950x514')
+    command_win.mainloop()
