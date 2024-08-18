@@ -12,7 +12,7 @@ import win32api
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
 pc_name = GetComputerName()
-ShowCursor(0)
+ShowCursor(-1)
 
 def next_joe():
     engine.say(f'So, what we will do?')
@@ -45,7 +45,6 @@ def joe_work():
         next_joe()
 
 def boot():
-    ShowCursor(-1)
     SetConsoleTitle('Operating System 1999-2024. All right reserved.')
     work = Thread(target=joe_work)
     work.start()

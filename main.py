@@ -26,7 +26,7 @@ from filesys.system.system import *
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
 
-ShowCursor(0)
+ShowCursor(-1)
 
 global mng
 
