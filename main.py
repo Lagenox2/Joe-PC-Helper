@@ -12,6 +12,7 @@ from PIL import ImageTk
 from tkinter import *
 from time import *
 import win32api
+from win32api import ShowCursor
 import win32con
 import pyttsx3
 import keyboard
@@ -24,6 +25,8 @@ from filesys.system.system import *
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 193)
+
+ShowCursor(0)
 
 global mng
 
@@ -82,6 +85,7 @@ def browsing():
     os.system('start http://')
 
 def os_start():
+
     engine.say('Welcome. To your Operating System. I made it especially for you!')
     engine.runAndWait()
     boot()
