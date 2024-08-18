@@ -18,11 +18,13 @@ def cmd_listen():
 
 def cmd_answer(comd):
     if comd == 'shutdown':
-        engine.say('Just close the command prompt window by double click and wait.')
+        engine.say('Just close the command prompt window by click and wait.')
         engine.runAndWait()
     else:
         print(f'Bad name of command {comd}.')
 
 def command():
+    print()
+    print('Operating System 1999-2000. All right reserved.')
     while True:
         cmd_answer(cmd_listen())

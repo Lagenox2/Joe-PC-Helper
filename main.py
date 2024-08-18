@@ -4,6 +4,7 @@ import tkinter as tk
 import os
 import sys
 from tkinter import messagebox as mb
+import winsound
 
 from PIL import Image
 from PIL import ImageTk
@@ -106,7 +107,7 @@ def oper_sys():
     root1.mainloop()
 
 def playing():
-    engine.say('Because its needs too many disk space to save this programm and its data, I have code, that im compiling every start. Please wait...')
+    engine.say('Please wait...')
     engine.runAndWait()
     sleep(1)
     os.system('compile.bat')
