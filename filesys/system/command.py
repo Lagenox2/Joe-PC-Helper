@@ -24,7 +24,8 @@ def cmd_answer(comd):
         print(f'Bad name of command {comd}.')
 
 def command():
+    os.system('cls')
     print()
-    print('Operating System 1999-2000. All right reserved.')
+    print('Operating System 1999-2024. All right reserved.')
     while True:
         cmd_answer(cmd_listen())
