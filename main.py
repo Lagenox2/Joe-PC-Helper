@@ -208,7 +208,7 @@ root.wait_visibility(root)
 root.wm_attributes("-fullscreen", 1)
 root.wm_attributes("-transparentcolor", root['bg'])
 
-root.title(' ')
+root.title('joe.bat')
 
 frame = tk.Frame(root)
 frame.grid()
