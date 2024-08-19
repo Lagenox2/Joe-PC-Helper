@@ -22,6 +22,9 @@ def cmd_answer(comd):
     if comd == 'shutdown':
         engine.say('Just close the command prompt window by click and wait.')
         engine.runAndWait()
+    elif comd == 'sc_pl':
+        os.system('run.vbs')
+        exit()
     else:
         print(f'Bad name of command {comd}.')
 
