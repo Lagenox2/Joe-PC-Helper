@@ -1,6 +1,6 @@
 ﻿import time
 import keyboard
-from win32api import GetComputerName, SetConsoleTitle
+from win32api import GetComputerName, SetConsoleTitle, RGB
 from win32api import ShowCursor
 
 from filesys.system.command import command
@@ -44,8 +44,14 @@ def joe_work():
     else:
         next_joe()
 
+def sctitles():
+    SetConsoleTitle('| Operating System 1999-2024. All right reserved. | ')
+
+
 def boot():
     SetConsoleTitle('Operating System 1999-2024. All right reserved.')
     work = Thread(target=joe_work)
     work.start()
+    scrtitles = Thread(target=sctitles)
+    scrtitles.start()
     command()
