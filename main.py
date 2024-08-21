@@ -85,29 +85,12 @@ def browsing():
     os.system('start http://')
 
 def os_start():
-    engine.say('Welcome. To your Operating System. I made it especially for you!')
+    engine.say('Welcome. To your Operating System.')
     engine.runAndWait()
     boot()
 
 def oper_sys():
-    root1 = tk.Tk()
-
-    root1.wait_visibility(root1)
-    root1.wm_attributes("-fullscreen", 1)
-    root1.wm_attributes("-transparentcolor", root1['bg'])
-
-    root1.title(' ')
-
-    frame1 = tk.Frame(root1)
-    frame1.grid()
-
-    canvas1 = tk.Canvas(frame1, width=root1.winfo_width(), height=root1.winfo_height(), background='black')
-    canvas1.pack()
-
-    process2 = Thread(target=os_start)
-    process2.start()
-
-    root1.mainloop()
+    os_start()
 
 def playing():
     engine.say('Please wait...')
@@ -133,7 +116,7 @@ def joke():
     engine.say(jokes[randint(0, len(jokes))])
     engine.runAndWait()
 
-def manage():
+def manage(text, win):
     mng = Tk('Manage')
     mng.title('Manage')
     mng.resizable(False, False)
@@ -151,6 +134,7 @@ def manage():
     jok.pack()
     jok.config(command=joke)
     mng.mainloop()
+    menu(text, win)
 
 def menu(text, win):
     engine.say('If you want me to help you to manage your system, enter "manage" in command prompt window. '
@@ -162,8 +146,10 @@ def menu(text, win):
     if choice == 'manage':
         engine.say('Ok, proceed.')
         engine.runAndWait()
-        manage()
+        manage(text, win)
     elif choice == 'clnd_int':
+        pracess = Thread(target=clnd)
+        pracess.start()
         clnd_int(win, text)
     else:
         menu(text, win)
