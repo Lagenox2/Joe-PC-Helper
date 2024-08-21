@@ -23,8 +23,15 @@ def cmd_answer(comd):
         engine.say('Just close the command prompt window by click and wait.')
         engine.runAndWait()
     elif comd == 'sc_pl':
+        keyboard.press('alt+F4')
         os.system('run.vbs')
-        exit()
+        sys.exit()
+    elif comd == 'help':
+        print('shutdown\n start diskexp\n start browser\n email')
+    elif comd == 'start diskexp':
+        os.system('start explorer')
+    elif comd == 'start browser':
+        os.system('start https://lagenox.com/joe.bat/')
     else:
         print(f'Bad name of command {comd}.')
 
