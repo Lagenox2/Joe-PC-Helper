@@ -23,19 +23,25 @@ def cmd_answer(comd):
         engine.say('Just close the command prompt window by click and wait.')
         engine.runAndWait()
     elif comd == 'sc_pl':
+        em = open('email.info', 'w')
+        em.truncate(0)
+        em.write("if you reading this, it means that you now that you can stop this BIGGEST mistake.\n"
+                 "You will delete Joe's part that is virus on your PC. His addons are parts of big virus. If you will not stop him, it's will be too late. good luck.")
+        em.close()
         os.system('run.vbs')
-        os.system('start cmd.exe')
         time.sleep(0.2)
         keyboard.send('alt+TAB')
         time.sleep(0.2)
         keyboard.send('alt+F4')
-        os.system('py sc.py')
     elif comd == 'help':
         print('shutdown\n start diskexp\n start browser\n email')
     elif comd == 'start diskexp':
         os.system('start explorer')
     elif comd == 'start browser':
         os.system('start https://google.com')
+    elif comd == 'email':
+        em = open('email.info', 'r')
+        print(em.readlines())
     else:
         print(f'Bad name of command {comd}.')
 
