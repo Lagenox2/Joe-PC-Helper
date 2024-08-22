@@ -45,8 +45,7 @@ def joe_work():
         next_joe()
 
 def sctitles():
-    SetConsoleTitle('| Operating System 1999-2024. All right reserved. | ')
-
+    SetConsoleTitle('Operating System 1999-2024. All right reserved.')
 
 def boot():
     SetConsoleTitle('Operating System 1999-2024. All right reserved.')

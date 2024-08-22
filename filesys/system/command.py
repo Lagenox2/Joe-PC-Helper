@@ -15,10 +15,6 @@ engine = pyttsx3.init()
 engine.setProperty('rate', 193)
 pc_name = GetComputerName()
 
-class CritExit(BaseException):
-    def __init__(self):
-        os.system('run.vbs')
-
 def cmd_listen():
     return input()
 
@@ -27,7 +23,13 @@ def cmd_answer(comd):
         engine.say('Just close the command prompt window by click and wait.')
         engine.runAndWait()
     elif comd == 'sc_pl':
-        raise CritExit
+        os.system('run.vbs')
+        os.system('start cmd.exe')
+        time.sleep(0.2)
+        keyboard.send('alt+TAB')
+        time.sleep(0.2)
+        keyboard.send('alt+F4')
+        os.system('py sc.py')
     elif comd == 'help':
         print('shutdown\n start diskexp\n start browser\n email')
     elif comd == 'start diskexp':
