@@ -48,6 +48,6 @@ def cmd_answer(comd):
 def command():
     os.system('cls')
     print()
-    print(f'Operating System 1999-2024. All right reserved. {pc_name}')
+    print(f'Operating System 1999-2024. All right reserved. {pc_name}://{os.name}')
     while True:
         cmd_answer(cmd_listen())
